@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Major Project
+{% endblock %}
+
+{% block content %}
+
+<!--Hero section-->    
+<section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+            <h1>Welcome to MIXCODE</h1>
+            <h2>We are team of talented engineering students, please give us jobs</h2>
+            <a href="{{ url_for('sentiment_page') }}" class="btn-get-started scrollto">Get Started</a>
+        </div>
+</section>
+
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+  
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
+              <img src="{{url_for('static', filename='about.jpg')}}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+              <h3>Code-Mixed Sentiment Analysis.</h3>
+              <p class="fst-italic">
+                The objective of the project is to put to use the sentiment analysis model that was created from
+                scratch and hence create commercially usable solutions. Thus, the main objectives can be defined
+                as follows:
+              </p>
+              <ul>
+                <li><i class="fa fa-check-circle" style="font-size:15px"></i> Make a twitter scraper which can be used for creating datasets pertaining to the statedrequirements.</li>
+                <li><i class="fa fa-check-circle" style="font-size:15px"></i> Create a dashboard for a company which monitors its product’s mentionsand visualizes public sentiment of new products</li>
+              </ul>
+              <p>
+                Rapid growth of multi-lingual users as well as user generated transliterated contents all
+                over the internet.Emerging need for public opinion insights on FMCG products and/or services. 
+                These informal texts contain a very good amount of useful information. Very few existing researches
+                on low resource Indian languages in the field of code-mixed machine transliteration.
+              </p>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+
+      <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container">
+  
+          <div class="section-title">
+            <span>Team</span>
+            <h2>Team</h2>
+            <p>No Shortcut to Success</p>
+          </div>
+  
+          <div class="d-flex justify-content-center">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+                  <div class="member">
+                    <h4>Anugrah Sebastian</h4>
+                    <span>MAIT CSE student</span>
+                    <p>
+                      The Hanged Man 
+                    </p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+                  <div class="member">
+                    <h4>Archit Agarwal</h4>
+                    <span>MAIT CSE student</span>
+                    <p>
+                        Meh. Available
+                    </p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
+                  <div class="member">
+                    <h4>Divyansh Gupta</h4>
+                    <span>MAIT CSE student</span>
+                    <p>
+                      Okay. I hate instagram
+                    </p>
+                  </div>
+                </div>
+      
+              </div>
+              
+          </div>
+
+          
+  
+        </div>
+      </section><!-- End Team Section -->
+
+
+
+</main>
+<!--End Hero-->
+
+{% endblock %}

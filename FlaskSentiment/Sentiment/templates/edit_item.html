@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+
+{%block title%}
+    Edit Item Page
+{%endblock%}
+
+{%block content%}
+    <body class="text-center">
+        <section id="edit_item" class="d-flex align-items-center">
+            <div class="container">
+                <form method="POST" style="color: white;">
+    
+                    {{form.hidden_tag()}}
+                    
+                    <br>
+                    <h3 class="h3 mb-3 font-weight-normal">
+                        Please Add New Details of the Item
+                    </h3>
+                    <div style="width: 60%; margin: auto;">
+                        <br>
+                        {{form.name.label()}}
+                        {{form.name(class="form-control", placeholder="")}}
+    
+                        {{form.company.label()}}
+                        {{form.company(class="form-control", placeholder="")}}
+    
+                        {{form.description.label()}}
+                        {{form.description(class="form-control", placeholder="")}}
+    
+                        {{form.path.label()}}
+                        {{form.path(class="form-control", placeholder="")}}
+    
+                        <br>
+
+                        <br>
+                    
+                    </div>
+                    <div style="width: 10%; margin: auto;">
+                        {{form.submit(class="btn btn-lg btn-block btn-primary")}}
+    
+                        <br>
+                    </div>
+                    
+    
+                    
+    
+                    
+                </form>
+            </div>
+
+        </section>
+        
+    </body>
+{%endblock%}
