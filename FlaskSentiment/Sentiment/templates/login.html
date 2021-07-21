@@ -9,47 +9,28 @@
         <section id="login" class="d-flex align-items-center">
             <div class="container">
                 <form method="POST" class="form-signin" style="color:white">
-                    {{ form.hidden_tag() }}     <!--To hide the contents during transmission by infecting extra redundant tokens-->
-    
+                    {{ form.hidden_tag() }}
                     <br>
-    
-                    <h1 class="h3 mb-3 font-weight-normal">
-                        Please Login
-                    </h1>
-
+                    <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
                     <div style="width: 60%; margin: auto;">
                         <br>
                         {{ form.username.label() }}
                         {{ form.username(class="form-control", placeholder="User Name") }}
-        
                         {{ form.password.label() }}
-                        {{ form.password(class="form-control", placeholder="Password") }}
-        
+                        {{ form.password(class="form-control", placeholder="Password") }}     
                         <br>
                     </div>
-                    
-        
-        
                     <div class="checkbox mb-3">
                        <h6>Do you not have an account?</h6>
                        <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
                     </div>
-                    
                     <div style="width: 10%; margin: auto;">
                         {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
-    
-                        <br>
-                        <br>
+                        <br><br>
                     </div>
-        
-                    
-        
                 </form>
             </div>
-            <br>
-            <br>
-
-        </section>
-        
+            <br><br>
+        </section>       
     </body>
 {%endblock%}

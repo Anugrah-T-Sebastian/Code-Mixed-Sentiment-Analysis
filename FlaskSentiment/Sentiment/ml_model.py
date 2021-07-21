@@ -1,6 +1,5 @@
 import os
 import sys
-# import sentiment_classifier
 import re
 import numpy
 import torch

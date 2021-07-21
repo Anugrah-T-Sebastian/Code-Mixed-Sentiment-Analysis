@@ -1,88 +1,61 @@
 {% extends 'base.html'%}
 
-
 {% block title %}
     Text Input
 {% endblock %}
 
-
-
-{%block content%}
-
-    
+{%block content%}   
     <body class="text-center">
         <section id="statement_input" class="d-flex align-items-center">
             <div class="container">
                 <div class='inputbox'>
-                    
-                    
                     <br>
-                        <form method="POST" action="" >
-    
-                            <h1>Enter an input for the model to classify :</h1>
-
-                            <div style="width: 60%; margin: auto;">
-                                {{form.input_string.label()}}
-                                {{form.input_string(class="form-control", placeholder="Enter Statement")}}
-    
-                                <br>
-                            
-                            </div>
-                            <div style="width: 10%; margin: auto;">
-                                {{form.submit(class="btn btn-lg btn-block btn-primary")}}
-                                <br>
-                            </div>
-
-                            
-                            
-    
-                        </form>
-                        
-                            <p class='out1'>
-                                <h4>
-                                The input is: 
-                                {% if out.Result == 'Negative' %}
-                                <span class="out2" style="color: rgb(255, 0, 0);"><b>{{out.Result}}</b></span></p>
-                                {% elif out.Result == 'Positive' %}
-                                <span class="out3" style="color: green;"><b>{{out.Result}}</b></span></p>
-                                {% else %}
-                                <span class="out4" style="color: yellow;"><b>{{out.Result}}</b></span></p>
-                                {% endif %}
-                                </h4>
-                                
-                            
-                            <div class="row d-flex align-items-center justify-content-center" style="margin-top: 20px; margin-left: 20px;">
-                                <div class="col-8">
-                                    <h4>Probability of belonging to each class</h4>
-                                 
-                                    <table class="table table-hover table-dark">         <!--Using value through the Jinja Template-->
-                                        <thead>
-                                            <tr>
-                                                <!-- Your Columns HERE -->
-                                                <th scope="col" style="color: green;">Positive</th>
-                                                <th scope="col" style="color: rgb(255, 0, 0);">Negative</th>
-                                                <th scope="col" style="color: yellow;">Neutral</th>
-                                    
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>{{out.Positive}}</td>        <!--using values from dictionary created-->
-                                                <td>{{out.Negative}}</td>
-                                                <td>{{out.Neutral}}</td>
-                                            </tr>
-                                                
-                                        </tbody>
-                                    </table>
-                                </div>
-    
-                        
+                    <form method="POST" action="" >
+                        <h1>Enter an input for the model to classify :</h1>
+                        <div style="width: 60%; margin: auto;">
+                            {{form.input_string.label()}}
+                            {{form.input_string(class="form-control", placeholder="Enter Statement")}}
+                            <br>    
+                        </div>
+                        <div style="width: 10%; margin: auto;">
+                            {{form.submit(class="btn btn-lg btn-block btn-primary")}}
+                            <br>
+                        </div>
+                    </form>
+                    <p class='out1'>
+                    <h4>
+                        The input is: 
+                        {% if out.Result == 'Negative' %}
+                        <span class="out2" style="color: rgb(255, 0, 0);"><b>{{out.Result}}</b></span></p>
+                        {% elif out.Result == 'Positive' %}
+                        <span class="out3" style="color: green;"><b>{{out.Result}}</b></span></p>
+                        {% else %}
+                        <span class="out4" style="color: yellow;"><b>{{out.Result}}</b></span></p>
+                        {% endif %}
+                    </h4>
+                    <div class="row d-flex align-items-center justify-content-center" style="margin-top: 20px; margin-left: 20px;">
+                        <div class="col-8">
+                            <h4>Probability of belonging to each class</h4>
+                            <table class="table table-hover table-dark">        
+                                <thead>
+                                    <tr>
+                                        <th scope="col" style="color: green;">Positive</th>
+                                        <th scope="col" style="color: rgb(255, 0, 0);">Negative</th>
+                                        <th scope="col" style="color: yellow;">Neutral</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{out.Positive}}</td>        
+                                        <td>{{out.Negative}}</td>
+                                        <td>{{out.Neutral}}</td>
+                                    </tr>         
+                                </tbody>
+                            </table>
+                        </div>    
                     </div>
+                </div>
             </div>
-
-        </section>
-        
-    </body>
-
-    
+        </section>    
+    </body> 
 {%endblock%}

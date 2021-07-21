@@ -5,18 +5,12 @@
 </style>
 
 <!-- More Info -->
-<div class="modal fade" id="Modal-MoreInfo-{{ item.id }}"
-     tabindex="-1"
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Modal-MoreInfo-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">
-          <!-- -->
-          {{ item.name }}
-        </h5>
-        <button type="button" class="close"
-                data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="ModalLabel">{{ item.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -24,157 +18,94 @@
         {{ item.description }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-                data-dismiss="modal">Close
-        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
-
 <!--Purchase Confirm-->
-<div class="modal fade" id="Modal-Purchase-{{ item.id }}"
-     tabindex="-1"
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Modal-Purchase-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="ModalLabel">
-          <!-- -->
-          {{ item.name }}
-        </h5>
-        <button type="button" class="close"
-                data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="ModalLabel">{{ item.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <form method="POST">
           {{extract_sentiment_form.hidden_tag()}}
-
-          <h4 class="text-center">
-            Are you sure that you want to extract sentimet about {{ item.name }}?
-          </h4>
-
+          <h4 class="text-center">Are you sure that you want to extract sentiment about {{ item.name }}?</h4>
           <br>
-
-          <h6 class="text-centre">
-            By clicking, you will start sentimet extraction
-          </h6>
-
+          <h6 class="text-centre">By clicking, you will be redirected to Sentiment Monitoring Dashboard</h6>
           <br>
-
-          <!--<input id="submit" name="submit" type="submit" value="Purchase Item!">-->
-          <!--The above hmtl code is acquire on terminal as the consequence on the below Jinja code
-              So we modify the code such that it is hidden from the user but gets the name of the purchased item-->
-              <input id="selected_item" name="selected_item" type="hidden" value="{{item.name}}">
+          <input id="selected_item" name="selected_item" type="hidden" value="{{item.name}}">
               {{extract_sentiment_form.submit(class='btn btn-outline-success btn-block')}}
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-                data-dismiss="modal">Close
-        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
 <!--Edit Confirm-->
-<div class="modal fade" id="Modal-Edit-{{ item.id }}"
-tabindex="-1"
-aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
- <div class="modal-header">
-   <h5 class="modal-title" id="ModalLabel">
-     <!-- -->
-     {{ item.name }}
-   </h5>
-   <button type="button" class="close"
-           data-dismiss="modal" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button>
- </div>
- <div class="modal-body">
-   <form method="POST">
-     {{ edit_item_form.hidden_tag() }}
-
-     <h4 class="text-center">
-       Are you sure that you want to edit {{ item.name }}?
-     </h4>
-
-     <br>
-
-     <h6 class="text-centre">
-       By clicking, you will start Editing
-     </h6>
-
-     <br>
-
-     <!--<input id="submit" name="submit" type="submit" value="Purchase Item!">-->
-     <!--The above hmtl code is acquire on terminal as the consequence on the below Jinja code
-         So we modify the code such that it is hidden from the user but gets the name of the purchased item-->
-         <input id="ed_item" name="ed_item" type="hidden" value="{{item.id}}">
-         {{edit_item_form.submit(class='btn btn-outline-success btn-block')}}
-   </form>
- </div>
- <div class="modal-footer">
-   <button type="button" class="btn btn-secondary"
-           data-dismiss="modal">Close
-   </button>
- </div>
+<div class="modal fade" id="Modal-Edit-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">{{ item.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          {{ edit_item_form.hidden_tag() }}
+          <h4 class="text-center">Are you sure that you want to edit {{ item.name }}?</h4>
+          <br>
+          <h6 class="text-centre">By clicking, you will start Editing</h6>
+          <br>
+           <input id="ed_item" name="ed_item" type="hidden" value="{{item.id}}">
+           {{edit_item_form.submit(class='btn btn-outline-success btn-block')}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-
 
 <!--Remove Confirm-->
-<div class="modal fade" id="Modal-Remove-{{ item.id }}"
-tabindex="-1"
-aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-<div class="modal-content">
- <div class="modal-header">
-   <h5 class="modal-title" id="ModalLabel">
-     <!-- -->
-     {{ item.name }}
-   </h5>
-   <button type="button" class="close"
-           data-dismiss="modal" aria-label="Close">
-     <span aria-hidden="true">&times;</span>
-   </button>
- </div>
- <div class="modal-body">
-   <form method="POST">
-     {{ remove_item_form.hidden_tag() }}
-
-     <h4 class="text-center">
-       Are you sure that you want to remove item {{ item.name }}?
-     </h4>
-
-     <br>
-
-     <h6 class="text-centre">
-       By clicking, you will start removing
-     </h6>
-
-     <br>
-
-     <!--<input id="submit" name="submit" type="submit" value="Purchase Item!">-->
-     <!--The above hmtl code is acquire on terminal as the consequence on the below Jinja code
-         So we modify the code such that it is hidden from the user but gets the name of the purchased item-->
-         <input id="r_item" name="r_item" type="hidden" value="{{item.id}}">
+<div class="modal fade" id="Modal-Remove-{{ item.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">{{ item.name }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          {{ remove_item_form.hidden_tag() }}
+          <h4 class="text-center">Are you sure that you want to remove item {{ item.name }}?</h4>
+          <br>
+          <h6 class="text-centre">By clicking, you will start removing</h6>
+          <br>
+          <input id="r_item" name="rm_item" type="hidden" value="{{item.id}}">
          {{remove_item_form.submit(class='btn btn-outline-success btn-block')}}
-   </form>
- </div>
- <div class="modal-footer">
-   <button type="button" class="btn btn-secondary"
-           data-dismiss="modal">Close
-   </button>
- </div>
-</div>
-</div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 

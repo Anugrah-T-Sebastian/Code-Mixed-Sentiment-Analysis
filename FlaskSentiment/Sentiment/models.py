@@ -1,7 +1,6 @@
 from Sentiment import db, login_manager
 from Sentiment import bcrypt
-from flask_login import UserMixin       #Provide extra methods required by flask for login system
-                                        #Read more about it on https://flask-login.readthedocs.io/en/latest/#how-it-works
+from flask_login import UserMixin       
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -30,19 +29,17 @@ class User(db.Model, UserMixin):
         self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode('utf-8')
 
     def check_password_correction(self, attempted_password):
-        return bcrypt.check_password_hash(self.password_hash, attempted_password)       #Checks if the attempted password hash value to is equal to the stored Hash value
+        return bcrypt.check_password_hash(self.password_hash, attempted_password)     
 
 
-
-class Item(db.Model):       #Creating Database table schema
+class Item(db.Model): 
     id = db.Column(db.Integer(), primary_key = True)
     name = db.Column(db.String(length = 30), nullable = False, unique = True)
     company = db.Column(db.String(length = 12), nullable = True, unique = False)
     description = db.Column(db.String(length = 1024), nullable = False, unique = False)
-    path = db.Column(db.String(length = 1024), nullable = False, unique = False)
     owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
 
-    def __repr__(self):      #magic function to create your own IDs of DB items
+    def __repr__(self):    
         return f'Item {self.name}'
 
     

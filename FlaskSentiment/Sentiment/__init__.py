@@ -1,29 +1,18 @@
-from flask_sqlalchemy import SQLAlchemy     #importing header to synchronize database
+from flask_sqlalchemy import SQLAlchemy   
 from flask import Flask, render_template
-from flask_bcrypt import Bcrypt     #To encrypt password into Hash values
-from flask_login import LoginManager        #To manage Login functionalities
+from flask_bcrypt import Bcrypt   
+from flask_login import LoginManager   
 
-
-
-app = Flask(__name__)       #Creating flask instance
+app = Flask(__name__)     
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Market.db'
-app.config['SECRET_KEY'] = 'd770946afb62e547ecb834a6'      #SECRET KEY!! DO NOT LOOSE WHILE DEVELOPING
+app.config['SECRET_KEY'] = 'd770946afb62e547ecb834a6'  
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False    
 
-db = SQLAlchemy(app)        #Passing the flask instance to Database instance
+db = SQLAlchemy(app)        
+bcrypt = Bcrypt(app)       
 
-bcrypt = Bcrypt(app)        #Passing the flask instance to Bcrypt instance
-
-login_manager = LoginManager(app)       #Passing the flask instance to LoginMangaer instance
-login_manager.login_view = "login_page"     #Providing route to Login page so that when
-login_manager.login_message_category = "info"       #Message flashed with Blue color
+login_manager = LoginManager(app)       
+login_manager.login_view = "login_page"    
+login_manager.login_message_category = "info"       
 
 from Sentiment import routes
-
-
-#Username: admin
-#Email: admin@admin.com
-#Passowrd: admin@123
-
-#agna
-#agna@gmail.co
-#
