@@ -22,11 +22,11 @@ Our final dataset includes 23K entries, each with a label of either 0,1,2 (0-neg
 
 ![Image](CodeMixedImages/img1.jpg)
 
-Extracting tweets to expand dataset using tweepy library
+Fig. Extracting tweets to expand dataset using tweepy library
 
 ![Image](CodeMixedImages/img2.jpg)
 
-Data entries as collected from twitter.
+Fig. Data entries as collected from twitter.
 
 ### PRE-PROCESSING
 As social media text is different from the regular text with irregular grammar, elongation, and all the informal usages of language, we needed to improve the quality of the text as it has a major effect on the final score. 
@@ -41,15 +41,15 @@ So we perform our pre-processing steps as follows:
 
 ![Image](CodeMixedImages/img3.jpg)
 
-Function to label the data extracted from different sources
+Fig. Function to label the data extracted from different sources
 
 ![Image](CodeMixedImages/img4.jpg)
 
-Removing NULL values
+Fig. Removing NULL values
 
 ![Image](CodeMixedImages/img5.jpg)
 
-Pre-process data
+Fig. Pre-process data
 
 ### MODEL
 Our best performing system is a fine-tuned XLM-RoBERTa , which is a general purpose sentence representation and an extended version of mBERT and XLM [18] and is based on Transformers. Introduction of XLM-R model has led to an explosion of research in this area, with researchers trying various approached to build upon XLM-R model, trying to increase accuracy of the model by focusing on the factors raised in the XLM-R model research paper. For this code-mixing sentiment classification task, the input sentence will be organized as 
@@ -61,15 +61,15 @@ where the [CLS] token is inserted in the beginning place of the sequence which i
 
 ![Image](CodeMixedImages/img6.jpg)
 
-Importing and using XLM-Roberta transformer
+Fig. Importing and using XLM-Roberta transformer
 
 ![Image](CodeMixedImages/img7.jpg)
 
-Model Evaluation
+Fig. Model Evaluation
 
 ![Image](CodeMixedImages/img8.jpg)
 
-Loading and using XLM-Roberta transformer
+Fig. Loading and using XLM-Roberta transformer
 
 In recent years, a lot of models based on Transformer have been proposed such as BERT [6], RoBERTa [5] and ALBERT. Those models take advantage of both available large corpora and computational power and have outperformed the traditional techniques in various sentiment analysis tasks. Using HuggingFace Transformers library we fine-tuned XLM-RoBERTa base model on our training data in a randomly shuffled fashion.
 
@@ -79,46 +79,46 @@ Similar to how we collect twitter data to train our model, we use the Tweepy lib
 
 ![Image](CodeMixedImages/img9.jpg)
 
-Extracting tweets related to BJP
+Fig. Extracting tweets related to BJP
 
 ### USER INTERFACE AND DATA VISUALISATION
 We created a web portal for authorized users to access the data we collected and display it through interactive graphs and plots.
 
 ![Image](CodeMixedImages/img10.jpg)
 
-Home Page of Web Portal.
+Fig. Home Page of Web Portal.
 
 ![Image](CodeMixedImages/img11.jpg)
 
-About the Project
+Fig. About the Project
  
 ![Image](CodeMixedImages/img12.jpg)
 
-About the Team
+Fig. About the Team
 
 ![Image](CodeMixedImages/img13.jpg)
 
-Login Page to authorize users
+Fig.Login Page to authorize users
 
 ![Image](CodeMixedImages/img15.jpg)
 
-Feature which allows user to try out our model
+Fig.Feature which allows user to try out our model
 
 ![Image](CodeMixedImages/img15.jpg)
 
-Dashboard displaying different products we can analyse
+Fig. Dashboard displaying different products we can analyse
 
 ![Image](CodeMixedImages/img16.jpg)
 
-OnePlus Twitter Monitoring Dashboard
+Fig. OnePlus Twitter Monitoring Dashboard
 
 ![Image](CodeMixedImages/img17.jpg)
 
-Airtel Twitter Monitoring Dashboard
+Fig. Airtel Twitter Monitoring Dashboard
 
 ![Image](CodeMixedImages/img18.jpg)
  
-BJP Twitter Monitoring Dashboard
+Fig. BJP Twitter Monitoring Dashboard
 
 
 ## CONCLUSION
